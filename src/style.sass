@@ -1,0 +1,606 @@
+@import url("https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display|Saira")
+
+*:focus
+  outline: none
+*
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important
+
+html
+  height: 100%
+  margin: 0
+  overflow: hidden
+  body
+    @extend html
+    overflow-y: scroll
+    background: linear-gradient(rgba(255, 255, 255, .6) 10%, white 40%), url('https://github.com/ace1122sp/recipe-box/blob/master/static/media/cl.b8e4b0df.jpg?raw=true') 40%
+    background-position: left
+    background-size: cover
+    background-repeat: no-repeat
+    background-attachment: fixed
+  body::-moz-focus-inner
+    border: 0
+
+    button::-moz-focus-inner
+      border: 0
+
+#root
+  font-family: 'Saira', sans-serif
+  display: flex
+  flex-direction: column
+
+  ul
+    list-style: none
+
+.body-land
+  width: 100vw
+  min-height: 300px
+  overflow: hidden
+  margin: 0
+  background: linear-gradient(rgba(255, 255, 255, 0.6) 10%, white 105%), url("cl.jpg") 40%
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+  background-attachment: fixed
+  display: flex
+  flex-direction: column
+  height: 100vh
+  font-family: "Saira", sans-serif
+  animation: fadein 1000ms ease-in
+
+.content-land
+  display: flex
+  align-items: center
+  flex-direction: column
+  background: rgba(255, 255, 255, 0.35)
+  margin: auto
+  font-size: 2.7vw
+  border-top: 2px solid white
+  border-bottom: 2px solid white
+
+  h1
+    font-family: "Sedgwick Ave Display", cursive
+    text-shadow: 3px 3px 0px rgba(158, 158, 158, 0.72)
+    color: rgba(62, 248, 62, 1.79)
+    letter-spacing: 20px
+    padding: 6px
+    text-decoration-line: underline
+    text-decoration-color: white
+    text-decoration-style: dotted
+.p
+  display: flex
+  flex-direction: row
+  white-space: nowrap
+  padding: 10px
+
+  p
+    letter-spacing: 11.5px
+    color: darkslategray
+    padding: 4px
+    overflow: hidden
+    border-right: 2px solid transparent
+    margin: 0 auto
+    animation: blinking 800ms step-end infinite, typing 3100ms steps(29, end)
+
+.btn-land
+  display: flex
+  margin: auto
+  padding: 20px
+
+  button
+    border-style: none
+    font-family: inherit
+    font-size: 25px
+    padding: 13px 32px
+    border-radius: 13px
+    background: rgba(62, 248, 62, 0.6)
+    color: white
+    animation: pulsing 1500ms linear infinite alternate
+
+  button:hover
+    cursor: pointer
+
+  button:active
+    color: rgba(62, 248, 62, 0.6)
+    background: rgba(255, 255, 255, .5)
+
+.h-btns
+  background: none
+  padding: 0 20px
+  color: #686862
+  text-decoration-line: underline
+  text-decoration-style: dotted
+
+.h-btns:active .to-shake
+  animation: shake 300ms ease-in
+
+.btn, .inp
+  border-style: none
+
+.btn:hover, .inp:hover
+  cursor: pointer
+
+.warn-n
+  display: none
+
+.warn-s
+  display: flex
+  justify-content: center
+  margin: auto 12px
+  animation: warning 5s ease-in forwards
+  background: white
+  color: gray
+  border: 2px dashed gray
+  padding: 5px
+
+.header
+  display: flex
+  flex-direction: row
+  margin-bottom: 5vw
+  font-family: 'Sedgwick Ave Display', cursive
+  text-shadow: 3px 3px 0px rgba(158, 158, 158, 0.72)
+  color: rgba(62, 248, 62, 0.79)
+  background: rgba(245, 245, 245, 0.52)
+  font-size: 1.4em
+  font-weight: 500
+  animation: drop 1400ms ease-in
+  animation-delay: 300ms
+  animation-fill-mode: forwards
+  transform: rotateX(-90deg)
+  perspective: 1000px
+  perspective-origin: center bottom
+  transform-origin: top
+
+  h1
+    flex-grow: 1
+    padding-left: 10px
+    margin: auto
+    letter-spacing: 4vw
+
+.content
+  background: green
+  display: flex
+
+.columns
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: space-around
+  align-items: flex-start
+
+.column
+  display: flex
+  flex-direction: column
+  padding: 10px
+
+#add-new
+  text-shadow: 1px 1px 0px rgba(250, 235, 215, 0.3)
+  color: #686862
+  background: none
+  border-style: none
+  font-size: 2.4em
+  margin: 5px
+  padding-right: 3vw
+  z-index: 0
+  position: relative
+
+#add-new:active, #create-recipe-b:active, .scaler:active
+  animation: adder 300ms ease-out
+
+#done-btn:active, .jumper:active
+  animation: jump 300ms ease-out
+
+.recipe
+  display: flex
+  flex-direction: column
+  margin: auto
+  width: 300px
+  perspective: 1000px
+  perspective-origin: center
+
+.recipe:hover
+  cursor: pointer
+
+.recipe-heading
+  box-shadow: 1px 0 5px -1px black
+  background: white
+  display: flex
+  flex-direction: row
+  padding: 3px
+
+  h3, button
+    margin: 10px
+    text-shadow: 1px 1px 1px #f9eddb
+    color: black
+
+  h3
+    flex-grow: 1
+
+  button
+    padding: 0 5px
+    background: none
+    font-weight: bold
+    font-size: 1.4em
+
+.recipe-body
+  box-shadow: 1px 0 5px -1px black
+  overflow: hidden
+  transition: color 5400ms ease 1s
+  background: rgba(255, 255, 0, 0.13)
+  flex-direction: column
+  transform-origin: top center
+
+  button
+    align-self: flex-end
+    margin: 10px
+    padding: 5px 30px
+    border-left: 2px solid greenyellow
+    background: rgba(22, 21, 21, 0.72)
+    font-weight: 700
+    color: white
+
+.recipe-body-display-f
+  animation: open 500ms ease-in
+  display: flex
+
+.recipe-body-display-n
+  display: none
+
+.edit-heading
+  @extend .recipe-heading
+  background: rgba(87, 86, 77, 0.1)
+
+  h3
+    color: #57564d
+
+.edit-body
+  padding: 15px 8px
+
+  input
+    font-size: 21px
+
+  input:nth-of-type(1)
+    color: gray
+    background: rgba(87, 86, 77, 0.18)
+
+  input:nth-of-type(2)
+    background: #57564d
+
+#done-btn
+  background: rgba(41, 242, 32, 0.64)
+  margin: 11px 8px
+  font-size: 22px
+  padding: 8px 3px
+
+.inner-edit-wrap
+  @extend .inner-wrap
+  flex-direction: column
+  background: white
+  transition: all ease 300ms
+  box-shadow: 1px 0px 9px 0px #eeeeed
+
+.create-recipe-display-f, .edit-window-display-f, .warning-f
+  display: flex
+  flex-direction: column
+
+.create-recipe-display-n, .edit-window-display-n, .warning-n
+  display: none
+
+.box-alone
+  z-index: 1
+  background: rgba(73, 79, 82, 0.31)
+  position: absolute
+  left: 0
+  top: 0
+  min-height: 100%
+  width: 100%
+  padding-bottom: 400px
+  animation: fadein 300ms ease
+
+.warning-inner
+  display: flex
+  flex-direction: column
+  color: black
+  text-shadow: 0 0 0 transparent
+  margin: auto
+  background: white
+
+  h3
+    padding: 5px
+
+.answer-options
+  display: flex
+  flex-direction: row
+  margin: 10px 5px
+  position: relative
+
+
+  button
+    width: 40%
+    margin: auto
+    padding-top: 7px
+    padding-bottom: 7px
+    border-radius: 7px
+    color: black
+    font-size: 1em
+    text-decoration: none
+
+  button:nth-of-type(1)
+    background: rgba(255, 0, 0, 0.53)
+
+  button:nth-of-type(2)
+    background: rgba(255, 193, 7, 0.5)
+
+#newRecipeName
+  width: 34vw
+  padding: 5px
+  font-size: 1.4em
+  background: white
+  color: gray
+
+.inner-wrap
+  display: flex
+  margin: auto
+  transform: translateX(-1000px)
+  animation: showup 1000ms ease-out
+  animation-delay: 400ms
+  animation-fill-mode: forwards
+  transform-origin: left
+
+  input, button
+    color: white
+
+  button
+    background: rgba(255, 193, 7, 0.9)
+    margin: 0 20px
+    border-radius: 8px
+    width: 3vw
+
+  input
+    background: rgb(79, 223, 52)
+    padding: 0 10px
+
+.fade-in
+  animation: fi 300ms ease-in
+
+.loadingDoc
+  background: white
+  position: absolute
+  display: flex
+  z-index: 3
+  width: 100vw
+  height: 100vh
+
+.warning-n
+  display: none
+
+.warning-f
+  display: flex
+@keyframes pulsing
+  0%
+    transform: scale(1) translate(0, 0)
+    opacity: .6
+
+  100%
+    transform: scale(1.1) translate(0, -3px)
+    opacity: 1
+@keyframes blinking
+  0%, 100%
+    border-color: transparent
+
+  50%
+    border-color: darkslategray
+@keyframes typing
+  0%
+    width: 0
+  90%
+    width: 100%
+  100%
+    width: 100%
+@keyframes shake
+  0%
+    transform: rotateY(-70deg)
+
+  20%
+    transform: rotateY(50deg)
+
+  65%
+    transform: rotateY(-30deg)
+
+  87%
+    transform: rotateY(17deg)
+  100%
+    transform: rotateY(0deg)
+@keyframes adder
+  0%
+    transform: scale(1.2)
+
+  100%
+    transform: scale(1)
+@keyframes jump
+  0%
+    transform: translate(0, -5px)
+
+  100%
+    transform: translate(0, 0)
+@keyframes open
+  0%
+    opacity: 0
+    transform: rotateX(-90deg)
+
+  10%
+    opacity: 1
+
+  40%
+    transform: rotateX(30deg)
+
+  68%
+    transform: rotateX(-13deg)
+
+  88%
+    transform: rotateX(5deg)
+
+  100%
+    transform: rotateX(0deg)
+@keyframes fi
+  0%
+    transform: scale(0.1)
+    opacity: 0
+
+  80%
+    transform: scale(1.2)
+    opacity: 1
+
+  100%
+    transform: scale(1)
+@keyframes fadein
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
+@keyframes showup
+  0%
+    transform: translate(-400px, -70px) scale(0.4) rotateY(0deg)
+  30%
+    transform: rotateY(90deg)
+  70%
+    transform: scale(1.2) rotateY(-15deg)
+
+  100%
+    transform: translate(0,0) scale(1) rotateY(0deg)
+@keyframes drop
+  0%
+    transform: rotateX(-90deg)
+
+  45%
+    transform: rotateX(45deg)
+
+  71%
+    transform: rotateX(-31deg)
+
+  89%
+    transform: rotateX(13deg)
+
+  100%
+    transform: rotateX(0deg)
+.circle
+  width: 100px
+  height: 100px
+  border-radius: 100px
+  margin: auto
+  animation: spinning 1300ms ease-in infinite
+  animation-direction: alternate
+  animation-delay: 300ms
+  transform-origin: center
+  perspective-origin: center
+
+  &:before
+    content: ''
+    display: block
+    width: 100px
+    height: 100px
+    position: relative
+    display: inline-block
+    border: 4px solid transparent
+    border-radius: 50%
+    border-top-color: #6cff00
+    border-bottom-color: rgba(123, 162, 78, 0.51)
+    top: -4px
+    left: -4px
+@keyframes spinning
+  0%
+    transform: rotate(190deg) scale(1)
+
+  59%
+    transform: rotate(-120deg) scale(1.2)
+    opacity: 0.2
+
+  85%
+    transform: rotate(-56deg) scale(0.8)
+
+  100%
+    transform: rotate(0deg) scale(1)
+@keyframes warning
+  0%
+    transform: translateX(-3999px)
+
+  25%, 75%
+    transform: translateX(0px)
+
+  100%
+    transform: translateX(3999px)
+.controls
+  display: flex
+  flex-direction: row
+@media (max-width: 750px)
+  .p
+    p
+      letter-spacing: 5px
+      animation-duration: 1ms
+
+  #newRecipeName
+    width: 55vw
+    padding: 5px
+    font-size: 1.4em
+
+  .inner-wrap
+
+    button
+      margin: 0 1vw
+      width: 6vw
+
+@media (max-width: 500px)
+  .h-btns
+    font-size: 5vw
+  .content-land
+    h1
+      text-shadow: .5px .5px 0px rgba(158, 158, 158, 0.72)
+      color: rgba(62, 248, 62, 1.79)
+
+  .header
+    flex-direction: column
+    font-size: 4vw
+    margin-bottom: 3.5vw
+
+    h1
+      margin-top: 10px
+      margin-bottom: 30px
+      text-shadow: .5px .5px 0px rgba(158, 158, 158, 0.72)
+      color: rgba(62, 248, 62, 1.79)
+
+  .edit-body
+    padding: 15px 5px
+    input
+      font-size: 14px
+
+  #newRecipeName
+    font-size: 1.2em
+
+  .inner-wrap
+    button
+      width: 7vw
+
+  .column
+    margin-top: 10px
+    margin-bottom: 10px
+
+  .warning-inner
+
+    h3
+      padding: 3px
+      font-size: 14px
+      justify-content: center
+
+  .answer-options
+    margin: 10px 2px
+    position: relative
+
+    button
+      width: 40%
+      margin: auto
+      padding-top: 7px
+      padding-bottom: 7px
+      border-radius: 7px
+      color: black
+      font-size: 1em
+      text-decoration: none
